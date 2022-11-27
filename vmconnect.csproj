@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{11087D6F-8F59-4180-8A97-1D6A24FF50E0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Microsoft.Virtualization.Client.InteractiveSession</RootNamespace>
+    <AssemblyName>vmconnect</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationIcon>vmconnect.ico</ApplicationIcon>
+    <StartupObject>Microsoft.Virtualization.Client.InteractiveSession.Program</StartupObject>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Management.Infrastructure" />
+    <Reference Include="Microsoft.Virtualization.Client" />
+    <Reference Include="Microsoft.Virtualization.Client.Common" />
+    <Reference Include="Microsoft.Virtualization.Client.Common.Types" />
+    <Reference Include="Microsoft.Virtualization.Client.Management" />
+    <Reference Include="Microsoft.Virtualization.Client.RdpClientAxHost" />
+    <Reference Include="Microsoft.Virtualization.Client.RdpClientInterop" />
+    <Reference Include="Microsoft.Virtualization.Client.Settings" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ActionMenu.cs" />
+    <Compile Include="AudioSettingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AudioSettingDialog.Designer.cs">
+      <DependentUpon>AudioSettingDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ClipboardMenu.cs" />
+    <Compile Include="Classes\CommandLineParser.cs" />
+    <Compile Include="ConnectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionDialog.Designer.cs">
+      <DependentUpon>ConnectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomZoomDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomZoomDialog.Designer.cs">
+      <DependentUpon>CustomZoomDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\DisplayResolution.cs" />
+    <Compile Include="EnhancedConnectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnhancedConnectionDialog.Designer.cs">
+      <DependentUpon>EnhancedConnectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\FileMenu.cs" />
+    <Compile Include="Classes\HelpMenu.cs" />
+    <Compile Include="Classes\IMenuActionTarget.cs" />
+    <Compile Include="Classes\IMenuItemProvider.cs" />
+    <Compile Include="Classes\IMsRdpDeviceV2.cs" />
+    <Compile Include="Classes\IMsRdpDriveV2.cs" />
+    <Compile Include="Classes\InteractiveSessionConfigurationOptions.cs" />
+    <Compile Include="InteractiveSessionConfigurationOptions.Designer.cs">
+      <DependentUpon>InteractiveSessionConfigurationOptions.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="InteractiveSessionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InteractiveSessionForm.Designer.cs">
+      <DependentUpon>InteractiveSessionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\IOleInPlaceObject.cs" />
+    <Compile Include="Classes\IVMConnectCommunicatorHelper.cs" />
+    <Compile Include="LocalResourcesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalResourcesDialog.Designer.cs">
+      <DependentUpon>LocalResourcesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\MediaMenu.cs" />
+    <Compile Include="Classes\MenuItemProvider.cs" />
+    <Compile Include="Classes\MenuItemResourceInfo.cs" />
+    <Compile Include="Classes\MenuManager.cs" />
+    <Compile Include="Classes\MenuResources.cs" />
+    <Compile Include="Classes\MigrationData.cs" />
+    <Compile Include="Classes\MigrationTracker.cs" />
+    <Compile Include="Classes\NativeMethods.cs" />
+    <Compile Include="Classes\NativeWindowDoubleClickInterceptor.cs" />
+    <Compile Include="Resources\NoConnectionDialog.xaml.cs">
+      <DependentUpon>NoConnectionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\RdpAuthenticationType.cs" />
+    <Compile Include="RdpClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\RdpConnectionInfo.cs" />
+    <Compile Include="Classes\RdpConnectionMode.cs" />
+    <Compile Include="Classes\RdpDriveInfo.cs" />
+    <Compile Include="Classes\RdpViewerConnectionState.cs" />
+    <Compile Include="RdpViewerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Resolution.cs" />
+    <Compile Include="Classes\ConnectionResources.cs" />
+    <Compile Include="Classes\RetryUIInvoker.cs" />
+    <Compile Include="Classes\ToolStripScaleAwareProfessionalRenderer.cs" />
+    <Compile Include="Classes\ViewMenu.cs" />
+    <Compile Include="Classes\VMConnectCommunicator.cs" />
+    <Compile Include="Classes\VMConnectUserActionPerformer.cs" />
+    <Compile Include="Classes\VMControlAction.cs" />
+    <Compile Include="Classes\VMControlMenuItems.cs" />
+    <Compile Include="Classes\VmisApplicationContext.cs" />
+    <Compile Include="VmisMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\VmisMenuItemFactory.cs" />
+    <Compile Include="Classes\VMISResources.cs" />
+    <Compile Include="VmisStatusStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VmisToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VmisToolStripButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\ZoomLevel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AudioSettingDialog.resources" />
+    <EmbeddedResource Include="ConnectionDialog.resources" />
+    <EmbeddedResource Include="CustomZoomDialog.resources" />
+    <EmbeddedResource Include="EnhancedConnectionDialog.resources" />
+    <EmbeddedResource Include="InteractiveSessionForm.resources" />
+    <EmbeddedResource Include="LocalResourcesDialog.resources" />
+    <EmbeddedResource Include="RdpViewerControl.resources" />
+    <EmbeddedResource Include="Resources\ConnectionResources.resources" />
+    <EmbeddedResource Include="Resources\MenuResources.resources" />
+    <EmbeddedResource Include="Resources\VMISResources.resources" />
+    <EmbeddedResource Include="VmisStatusStrip.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="InteractiveSessionConfigurationOptions.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>InteractiveSessionConfigurationOptions.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\NoConnectionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
